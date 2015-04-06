@@ -8,7 +8,7 @@
  * Controller of the fioApp
  */
 angular.module('fioApp')
-	.controller('MainCtrl', function ($scope, localStorageService) {
+	.controller('MainCtrl', function ($scope, localStorageService, fioYelpAPI) {
 
 		var photogsInStore = localStorageService.get('photog');
 
@@ -17,5 +17,9 @@ angular.module('fioApp')
 		$scope.$watch('photogs', function () {
 			localStorageService.set('photogs', $scope.photogs);
 		}, true);
+
+		fioYelpAPI.retrieveYelp('', function(data) {
+			$scope.photogs = data.businesses;
+		});
 
 	});

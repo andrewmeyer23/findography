@@ -1,3 +1,13 @@
-<div class="container">
-	<h1>Some Shit Here</h1>
+<div class="container text-center">
+	<h1>findography.io</h1>
+	<h4>where the world meets photographers</h4>
+</div>
+<br>
+<div class="container text-center">
+<h4>{{photogs.length}} Photographers Found</h4>
+	<ul>
+		<li ng-repeat="photog in photogs">
+			{{photog.name}}
+		</li>
+	</ul>
 </div>
