@@ -1,13 +1,18 @@
 <div class="container text-center">
 	<h1>findography.io</h1>
 	<h4>where the world meets photographers</h4>
-</div>
+
 <br>
+<div class="input-group input-group-lg">
+  <span class="input-group-addon" id="sizing-addon1">Search</span>
+  <input type="text" class="form-control" placeholder="Zip Code" aria-describedby="sizing-addon1" ng-model="$parent.zip.input" ng-change="$parent.zipInput()">
+</div>
+</div>
 <div class="container text-center">
-<h4>{{photogs.length}} Photographers Found</h4>
+<h4>{{$parent.photogs.length}} Photographers Found</h4>
 	<ul>
-		<li ng-repeat="photog in photogs">
-			{{photog.name}}
+		<li ng-repeat="photog in $parent.photogs">
+			{{photog.name}} - {{photog.review_count}} Reviews
 		</li>
 	</ul>
 </div>
